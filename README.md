@@ -1,6 +1,6 @@
-#Dynamic Navbar
+# Dynamic Navbar
 
-##Objective
+## Objective
 element A (nav)
 
 - distance from top is 200px
@@ -18,7 +18,7 @@ when A reaches top of window
 2. opacity turn to transparent 50%
 3. scale element B (0.98 -> 1)
 
-##Script
+## Script
 Define selectors
 
 ```
@@ -29,6 +29,7 @@ const nav = document.querySelector(".navbar");
       const profile = document.querySelector(".profile");
 ```
 
+Functions
 ```
       function checkY() {
         console.log(window.scrollY);
