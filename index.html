@@ -19,6 +19,14 @@
     ></script>
   </head>
   <body>
+    <section>
+      <h1 class="headline d-flex text-center justify-content-center align-items-center">
+        DYNAMIC NAVBAR <br />
+        THIS WAS CREATED WITH... <br />
+        ✨JAVASCRIPT✨
+      </h1>
+    </section>
+
     <nav id="navbar" class="navbar navbar-expand-lg bg-dark">
       <div class="container-fluid navbar-primary">
         <a class="navbar-brand navbar-primary fs-3" href="#">NAVBAR</a>
@@ -52,17 +60,14 @@
       </div>
     </nav>
 
-    <section>
-      <h1 class="headline d-flex text-center justify-content-center align-items-center">
-        DYNAMIC NAVBAR <br />
-        THIS WAS CREATED WITH... <br />
-        ✨JAVASCRIPT✨
-      </h1>
-    </section>
+    <br />
+    <br />
 
     <div class="profile">
       <img src="hunter.jpeg" class="img-thumbnail mx-auto d-block" />
     </div>
+
+    <br>
 
     <main class="summary container w-50 p-5 border">
       <h1 class="text-center">Hunter x Hunter</h1>
@@ -126,18 +131,16 @@
 
       function checkY() {
         console.log(window.scrollY);
-        if (window.scrollY > 1) {
+        if (window.scrollY > 200) {
           nav.classList.add("fix-nav");
           summary.classList.add("zoom");
-          profile.classList.add("disappear")
           navLinks.style = "display: none";
-          headline.style.marginTop = nav.offsetHeight + "px";
+          profile.style.marginTop = nav.offsetHeight + "px";
         } else {
           nav.classList.remove("fix-nav");
           summary.classList.remove("zoom");
-          profile.classList.remove("disappear")
           navLinks.style = "display: show";
-          headline.style.marginTop = 0;
+          profile.style.marginTop = 0;
         }
       }
 

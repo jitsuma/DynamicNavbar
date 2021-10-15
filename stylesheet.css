@@ -20,20 +20,11 @@
     transition-duration: .7s;
   }
   
-  
-  .profile {
-    transform: scale(1.2);
-    transition-duration: 0.5s;
-  }
-  
-  div.disappear {
-    transform: scale(.5);
-    transition-duration: 0.7s;
-  }
+
   
   .summary {
     padding: auto;
-    transform: scale(0.75);
+    transform: scale(0.98);
     transition-duration: 0.5s;
   }
   
