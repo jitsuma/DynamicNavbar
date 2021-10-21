@@ -1,6 +1,7 @@
 # Dynamic Navbar
 
 ## Objective
+
 element A (nav)
 
 - distance from top is 200px
@@ -19,6 +20,7 @@ when A reaches top of window
 3. scale element B (0.98 -> 1)
 
 ## Script
+
 Define selectors
 
 ```
@@ -30,6 +32,7 @@ const nav = document.querySelector(".navbar");
 ```
 
 Functions
+
 ```
       function checkY() {
         console.log(window.scrollY);

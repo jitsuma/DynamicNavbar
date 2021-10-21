@@ -67,7 +67,7 @@
       <img src="hunter.jpeg" class="img-thumbnail mx-auto d-block" />
     </div>
 
-    <br>
+    <br />
 
     <main class="summary container w-50 p-5 border">
       <h1 class="text-center">Hunter x Hunter</h1>
@@ -125,6 +125,8 @@
       //scroll fix-nav
       const nav = document.querySelector(".navbar");
       const navLinks = document.querySelector(".navbar-nav");
+      const navBrand = document.querySelector(".navbar-brand");
+      const navToggler = document.querySelector(".navbar-toggler");
       const headline = document.querySelector(".headline");
       const summary = document.querySelector(".summary");
       const profile = document.querySelector(".profile");
@@ -135,27 +137,22 @@
           nav.classList.add("fix-nav");
           summary.classList.add("zoom");
           navLinks.style = "display: none";
+          navToggler.style = "display: none";
+          navBrand.textContent = "^ scroll to top";
           profile.style.marginTop = nav.offsetHeight + "px";
         } else {
           nav.classList.remove("fix-nav");
           summary.classList.remove("zoom");
           navLinks.style = "display: show";
+          navToggler.style = "display: show";
+          navBrand.textContent = "NAVBAR";
           profile.style.marginTop = 0;
         }
       }
 
       window.addEventListener("scroll", checkY);
 
-      //hamburger menu
-      // const menu = document.querySelector(".navbar-toggler");
-
-      // function expandNav() {
-      //   if (menu.click) {
-      //     nav.style = "height:400";
-      //   }
-      // }
-
-      // window.addEventListener("click", expandNav);
+      
     </script>
   </body>
 </html>
