@@ -1,0 +1,12 @@
+.profile {
+  width: 200px;
+}
+
+.description {
+  display: flex;
+  align-items: center;
+}
+
+.row {
+    padding: 20px;
+}
