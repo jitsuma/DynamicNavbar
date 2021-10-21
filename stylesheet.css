@@ -22,7 +22,8 @@
 
   
   .summary {
-    padding: auto;
+    padding: 50px;
+    width: 50%;
     transform: scale(0.98);
     transition-duration: 0.5s;
   }
@@ -32,3 +33,12 @@
     transition-duration: 0.5s;
   }
   
+  @media screen and (max-width:650px){
+    p{
+      font-size:14px;
+    }  
+    .summary {
+      width: 100%;
+      padding:20px;
+    }
+}
