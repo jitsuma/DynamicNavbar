@@ -1,0 +1,49 @@
+.aura {
+  list-style-type: none;
+  position: absolute;
+}
+
+.enhancer {
+  top: 30%;
+  left: 50%;
+}
+.transmuter {
+  top: 50%;
+  left: 70%;
+}
+.conjurer {
+  top: 70%;
+  left: 70%;
+}
+.specialist {
+  top: 90%;
+  left: 50%;
+}
+.manipulator {
+  top: 70%;
+  left: 30%;
+}
+.emitter {
+  top: 50%;
+  left: 30%;
+}
+.release {
+  list-style-type: none;
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  font-weight: bold;
+  font-size: 100pt;
+}
+
+.trigger-enter .dropdown {
+  display: block;
+}
+
+.trigger-enter-active .dropdown {
+  opacity: 1;
+}
+
+.dropdownBackground.open {
+  opacity: 1;
+}
