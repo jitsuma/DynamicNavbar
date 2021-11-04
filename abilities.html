@@ -55,43 +55,92 @@
     </nav>
 
     <main>
-      <h1 class="text-center pt-5">Aura Types</h1>
+      <h1 class="header text-center pt-5">Aura Types</h1>
 
-      <div class="dropdownBackground">
-        <span class="arrow"></span>
+      <div class="types">
+        <div class="dropdownBackground">
+          <span class="arrow"></span>
+        </div>
+
+        <ul class="canvas">
+          <p class="release">発</p>
+          <li class="aura enhancer">
+            強化系 <br />
+            Enhancement
+            <ul class="dropdownText">
+              <li>
+                Enhancers are able to greatly increase their physical attack and defense and are best suited for melee combat.[29] Proficient
+                Enhancers who also take good care of their body can make it far more durable than tanks[101] and generate the force of a missile with
+                one blow.[102] It is rare to find male Enhancers with supportive abilities since most of them look to increase their combat
+                prowess.[14]
+              </li>
+            </ul>
+          </li>
+          <li class="aura transmuter">
+            変化系 <br />
+            Transmutation
+            <ul class="dropdownText">
+              <li>
+                Constructs created via Transmutation are pure aura, therefore they are invisible to individuals incapable of using Nen. Transmutation
+                is often mistaken for Conjuration due to their similarities. The difference is that Transmutation allows the user to mimic the
+                properties of a substance with their aura, whereas Conjuration changes aura into the actual substance.
+              </li>
+            </ul>
+          </li>
+          <li class="aura conjurer">
+            具現化系 <br />
+            Conjuration
+            <ul class="dropdownText">
+              <li>
+                the ability to create a physical, independent, material object out of one's aura;[5] however, users of this category can also create
+                laws and principles and affix them to a specific area.[106] The durability of a conjured object can generally be taken as a measure of
+                the user's skill, although conditions can be used to strengthen it.
+              </li>
+            </ul>
+          </li>
+          <li class="aura specialist">
+            特質系 <br />
+            Specialization
+            <ul class="dropdownText">
+              <li>
+                Specialists are not as much at a disadvantage as users of other Nen types if their category is revealed.[25] Only Specialists can use
+                this Nen type. It is possible to become one later in life, although it is more likely for Manipulators or Conjurers, which is why this
+                category is placed at the bottom of the Nen chart. Since its position is dictated by a factor other than the affinity for other Nen
+                types, it is currently unclear if it has the same acquisition rates as other categories, although it should be noted the presence of
+                Specialization in the chart affects other Nen types regularly.
+              </li>
+            </ul>
+          </li>
+          <li class="aura manipulator">
+            操作系 <br />
+            Manipulation
+            <ul class="dropdownText">
+              <li>
+                The main advantage of this category in combat is the ability to manipulate the enemy themselves.[5] Abilities of this type are
+                especially feared since the fight can be brought to an end as soon as the conditions are met.[59] The aura of the ability user mixes
+                with the target's, although it is not normally noticeable.[14] The degree of control is, for the most part, determined by a condition
+                that may or may not put the Manipulator at risk or at a disadvantage (such as attaching objects on the enemy, touching the enemy in a
+                certain way): the higher the difficulty for the condition to be achieved, the better the degree of control. However, it is impossible
+                to control a target that is already under the effect of Manipulation Nen.
+              </li>
+            </ul>
+          </li>
+          <li class="aura emitter">
+            放出系 <br />
+            Emission
+            <ul class="dropdownText">
+              <li>
+                Aura usually decreases in intensity very quickly when it leaves the source body, but adept Emitters can separate their aura from their
+                body for long periods of time, over long distances, and still be able to maintain it and its functions.[71]
+              </li>
+            </ul>
+          </li>
+        </ul>
       </div>
-
-      <ul class="canvas">
-        <p class="release">発</p>
-        <li class="aura enhancer">
-          強化系 <br />
-          Enhancement
-        </li>
-        <li class="aura transmuter">
-          変化系 <br />
-          Transmutation
-        </li>
-        <li class="aura conjurer">
-          具現化系 <br />
-          Conjuration
-        </li>
-        <li class="aura specialist">
-          特質系 <br />
-          Specialization
-        </li>
-        <li class="aura manipulator">
-          操作系 <br />
-          Manipulation
-        </li>
-        <li class="aura emitter">
-          放出系 <br />
-          Emission
-        </li>
-      </ul>
     </main>
 
     <script>
-      const nav = document.querySelector(".top");
+      const types = document.querySelector(".types");
       const background = document.querySelector(".dropdownBackground");
       const triggers = document.querySelectorAll(".canvas > li");
 
@@ -100,7 +149,23 @@
         this.classList.add("trigger-enter");
         setTimeout(() => this.classList.add("trigger-enter-active"), 150);
         background.classList.add("open");
+
+        const dropdownText = this.querySelector(".dropdownText");
+        const dropdownCoords = dropdownText.getBoundingClientRect();
+        const typesCoords = types.getBoundingClientRect();
+
+        const coords = {
+          height: dropdownCoords.height,
+          width: dropdownCoords.width,
+          top: dropdownCoords.top - typesCoords.top,
+          left: dropdownCoords.left,
+        };
+
+        background.style.setProperty("width", `${coords.width}px`);
+        background.style.setProperty("height", `${coords.height}px`);
+        background.style.setProperty("transform", `translate(${coords.left}px, ${coords.top}px)`);
       }
+
       function leaveArea() {
         console.log("Leave!");
         this.classList.remove("trigger-enter", "trigger-enter-active");
